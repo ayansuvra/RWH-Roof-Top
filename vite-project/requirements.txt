@@ -1,0 +1,49 @@
+# Node.js Project Dependencies
+# Install with: npm install
+
+# Core React Dependencies
+react@^19.1.1
+react-dom@^19.1.1
+
+# UI Component Libraries
+@radix-ui/react-accordion@^1.2.12
+@radix-ui/react-alert-dialog@^1.1.15
+@radix-ui/react-aspect-ratio@^1.1.7
+@radix-ui/react-avatar@^1.1.10
+@radix-ui/react-switch@^1.2.6
+@radix-ui/react-tabs@^1.1.13
+@radix-ui/react-toggle@^1.1.10
+@radix-ui/react-toggle-group@^1.1.11
+@radix-ui/react-tooltip@^1.2.8
+
+# Animation & Motion
+framer-motion@^12.23.12
+
+# Icons & Theming
+lucide-react@^0.542.0
+next-themes@^0.4.6
+
+# CSS & Styling
+tailwindcss@^4.1.13
+autoprefixer@^10.4.21
+postcss@^8.5.6
+
+# Utilities
+class-variance-authority@^0.7.1
+sonner@^2.0.7
+utils@^0.2.2
+
+# Development Dependencies
+@vitejs/plugin-react@^5.0.0
+vite@^7.1.2
+typescript@~5.8.3
+@types/react@^19.1.10
+@types/react-dom@^19.1.7
+
+# Linting & Code Quality
+eslint@^9.33.0
+@eslint/js@^9.33.0
+eslint-plugin-react-hooks@^5.2.0
+eslint-plugin-react-refresh@^0.4.20
+typescript-eslint@^8.14.0
+globals@^16.3.0
