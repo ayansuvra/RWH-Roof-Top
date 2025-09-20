@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { Button } from "./button";
 import { CheckCircle, XCircle, Info, type LucideIcon } from "lucide-react";
-import type { UserData } from "../../src/App";
+import type { UserData } from "../types";
 
 interface TankConfigurationProps {
   onNext: (data: Partial<UserData>) => void;
