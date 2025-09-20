@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { Button } from "./button";
 import { Building2, Zap, Droplets, CircleDot, type LucideIcon } from "lucide-react";
-import type { UserData } from "../types";
+import type { UserData } from "../../types";
 
 interface WaterSourceSelectionProps {
   onNext: (data: Partial<UserData>) => void;

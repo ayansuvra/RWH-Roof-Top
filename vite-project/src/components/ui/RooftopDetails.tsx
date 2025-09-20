@@ -6,7 +6,7 @@ import { Input } from "./input";
 import { Label } from "./label";
 import { Calculator, Home, Map } from "lucide-react";
 import { MapAreaCalculator } from "./MapAreaCalculator";
-import type { UserData } from "../types";
+import type { UserData } from "../../types";
 
 interface RooftopDetailsProps {
   onNext: (data: Partial<UserData>) => void;

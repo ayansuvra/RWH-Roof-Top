@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./card"
 import { Button } from "./button"
 import { Input } from "./input"
 import { Label } from "./label"
-import type { UserData } from "../types"
+import type { UserData } from "../../types"
 
 interface TankConfigurationProps {
   userData: UserData

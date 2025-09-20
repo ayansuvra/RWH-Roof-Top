@@ -12,7 +12,7 @@ import { Button } from "./button";
 import { Input } from "./input";
 import { Label } from "./label";
 import { MapPin, Navigation, Search } from "lucide-react";
-import type { UserData } from "../types";
+import type { UserData } from "../../types";
 
 interface LocationSelectionProps {
   onNext: (data: Partial<UserData>) => void;

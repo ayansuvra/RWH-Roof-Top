@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
 import { Button } from "./button";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
@@ -8,7 +7,6 @@ interface MapAreaCalculatorProps {
 }
 
 export function MapAreaCalculator({ onAreaCalculated }: MapAreaCalculatorProps) {
-  const [area, setArea] = useState(0);
   
   return (
     <Card>
