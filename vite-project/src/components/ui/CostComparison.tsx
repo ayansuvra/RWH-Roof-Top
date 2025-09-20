@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { Input } from "./input";
 import { Label } from "./label";
-import type { UserData } from "../../src/App";
+import type { UserData } from "../types";
 
 interface CostComparisonProps {
   userData: UserData;

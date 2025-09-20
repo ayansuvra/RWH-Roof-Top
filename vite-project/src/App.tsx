@@ -1,9 +1,9 @@
 import  { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion"; // ✅ corrected import
-import { LanguageSelection } from "../components/ui/LanguageSelection";
-import { LoginPage } from "../components/ui/LoginPage";
-import { OnboardingFlow } from "../components/ui/OnboardingFlow";
-import { ResultsPage } from "../components/ui/ResultsPage";
+import { LanguageSelection } from "./components/ui/LanguageSelection";
+import { LoginPage } from "./components/ui/LoginPage";
+import { OnboardingFlow } from "./components/ui/OnboardingFlow";
+import { ResultsPage } from "./components/ui/ResultsPage";
 
 export type AppState = "language" | "login" | "onboarding" | "results";
 

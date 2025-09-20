@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { Button } from "./button";
 import { Download, FileText, Wrench, ShoppingCart } from "lucide-react";
-import type { UserData } from "../../src/App";
+import type { UserData } from "../types";
 
 interface SystemBlueprintProps {
   userData: UserData;

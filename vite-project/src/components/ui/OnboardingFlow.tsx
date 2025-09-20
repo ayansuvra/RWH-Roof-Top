@@ -10,7 +10,7 @@ import { TankCapacitySelection } from "./TankCapacitySelection"
 import { WaterSourceSelection } from "./WaterSourceSelection"
 import { Button } from "./button"
 import { ArrowLeft } from "lucide-react"
-import type { UserData } from "../../src/App"
+import type { UserData } from "../types"
 
 interface OnboardingFlowProps {
   onComplete: (data: UserData) => void
