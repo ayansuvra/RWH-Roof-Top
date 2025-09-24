@@ -1,4 +1,5 @@
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
+import { resolveGoogleMapsApiKey } from "../../../lib/utils";
 import { Button } from "./button";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 
@@ -7,7 +8,7 @@ interface MapAreaCalculatorProps {
 }
 
 export function MapAreaCalculator({ onAreaCalculated }: MapAreaCalculatorProps) {
-  
+  const apiKey = resolveGoogleMapsApiKey() || "";
   return (
     <Card>
       <CardHeader>
@@ -15,7 +16,7 @@ export function MapAreaCalculator({ onAreaCalculated }: MapAreaCalculatorProps) 
       </CardHeader>
       <CardContent>
         <div className="h-64 mb-4">
-          <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY || ""}>
+          <APIProvider apiKey={apiKey}>
             <Map
               defaultCenter={{ lat: 28.6139, lng: 77.209 }}
               defaultZoom={18}

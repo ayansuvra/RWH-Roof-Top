@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
+import { resolveGoogleMapsApiKey } from "../../../lib/utils";
 import { Button } from "./button";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { MapPin } from "lucide-react";
@@ -12,7 +13,7 @@ export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
   const [area, setArea] = useState(0);
   const [isDrawing, setIsDrawing] = useState(false);
   
-  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "demo-key";
+  const apiKey = resolveGoogleMapsApiKey() || "demo-key";
 
   const finishDrawing = () => {
     setIsDrawing(false);
