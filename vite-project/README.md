@@ -1,54 +1,35 @@
 # Rainwater Harvesting System UI
 
-A React + TypeScript application for rainwater harvesting system design and cost analysis.
-
-## Features
-
-- Multi-language support
-- Location-based system design
-- Cost comparison and ROI analysis
-- Interactive onboarding flow
-- System blueprint generation
-
-## Tech Stack
-
-- React 19.1.1
-- TypeScript
-- Vite 7.1.2
-- Tailwind CSS 4.1.13
-- Framer Motion
-- Radix UI Components
-
-## Getting Started
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-```
-
 ## Project Structure
 
 ```
 src/
-├── App.tsx          # Main application component
-├── main.tsx         # Application entry point
-components/ui/
-├── LanguageSelection.tsx
-├── LoginPage.tsx
-├── OnboardingFlow.tsx
-├── ResultsPage.tsx
-└── ...              # Other UI components
+├── components/
+│   ├── ui/              # UI components
+│   └── childcomponents/ # Child components
+├── types/               # TypeScript types
+└── styles/              # Global styles
+hooks/                   # Custom hooks
+lib/                     # Utilities
 ```
 
-## Available Scripts
+## Getting Started
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run lint` - Run ESLint
-- `npm run preview` - Preview production build
+```bash
+npm install
+npm run dev
+```
+
+## Environment
+
+```
+VITE_GOOGLE_MAPS_API_KEY=your_api_key_here
+# Optional alternative also supported
+VITE_GOOGLE_MAPS_KEY=your_api_key_here
+```
+
+If you cannot create a `.env`, you can use one of these fallbacks without restarting dev server:
+
+- localStorage: `localStorage.setItem("VITE_GOOGLE_MAPS_KEY", "YOUR_KEY")`
+- window global: `window.__GMAPS_KEY__ = "YOUR_KEY"`
+- URL param: append `?gmaps=YOUR_KEY`
