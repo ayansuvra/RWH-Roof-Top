@@ -14,11 +14,7 @@ import {
   TrendingUp,
   Award,
 } from "lucide-react"
-<<<<<<< HEAD
 import type { UserData } from "../../App"
-=======
-import type { UserData } from "../../types"
->>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f
 
 interface ResultsPageProps {
   userData: UserData

@@ -1,6 +1,5 @@
 # Rainwater Harvesting System UI
 
-<<<<<<< HEAD
 A React + TypeScript application for rainwater harvesting system design and cost analysis.
 
 ## Features
@@ -20,20 +19,6 @@ A React + TypeScript application for rainwater harvesting system design and cost
 - Tailwind CSS 4.1.13
 - Framer Motion
 - Radix UI Components
-=======
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── ui/              # UI components
-│   └── childcomponents/ # Child components
-├── types/               # TypeScript types
-└── styles/              # Global styles
-hooks/                   # Custom hooks
-lib/                     # Utilities
-```
->>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f
 
 ## Getting Started
 
@@ -100,9 +85,8 @@ npm run build
 # Upload the contents to your hosting provider
 ```
 
-## Environment
+## Environment Variables
 
-<<<<<<< HEAD
 Create a `.env.local` file for local development:
 
 ```env
@@ -128,16 +112,3 @@ VITE_API_URL=your_api_url
 ## License
 
 This project is licensed under the MIT License.
-=======
-```
-VITE_GOOGLE_MAPS_API_KEY=your_api_key_here
-# Optional alternative also supported
-VITE_GOOGLE_MAPS_KEY=your_api_key_here
-```
-
-If you cannot create a `.env`, you can use one of these fallbacks without restarting dev server:
-
-- localStorage: `localStorage.setItem("VITE_GOOGLE_MAPS_KEY", "YOUR_KEY")`
-- window global: `window.__GMAPS_KEY__ = "YOUR_KEY"`
-- URL param: append `?gmaps=YOUR_KEY`
->>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f

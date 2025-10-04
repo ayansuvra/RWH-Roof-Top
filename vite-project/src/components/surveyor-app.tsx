@@ -1,7 +1,6 @@
 <<<<<<< HEAD
 =======
 
->>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import {
   APIProvider,
@@ -40,7 +39,6 @@ const INITIAL_CENTER: LatLng = { lat: 26.5139, lng: 89.5457 };
 =======
 // removed unused geoJsonToLatLng helper
 
->>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f
 const Guide = ({ step }: { step: Step }) => {
   const guideContent = {
     SEARCH: {
@@ -95,7 +93,6 @@ const Polygon = (props: PolygonProps) => {
 <<<<<<< HEAD
 =======
 
->>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f
   useEffect(() => {
     if (!map) return;
     if (!polygon) {
@@ -217,7 +214,6 @@ export default function SurveyorApp({ apiKey }: { apiKey: string }) {
 <<<<<<< HEAD
 =======
 
->>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f
             const result = await suggestRooftopBoundaries({
               satelliteImageDataUri: base64data,
               clickedPoint: { x: clickX, y: clickY },
@@ -229,7 +225,6 @@ export default function SurveyorApp({ apiKey }: { apiKey: string }) {
             const newPoints = pixelCoords.map((pixel: any) => {
 =======
             const newPoints = pixelCoords.map(pixel => {
->>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f
               const pixelX = pixel[0];
               const pixelY = pixel[1];
 
@@ -377,7 +372,6 @@ export default function SurveyorApp({ apiKey }: { apiKey: string }) {
 <<<<<<< HEAD
 =======
 
->>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f
   return (
     <APIProvider apiKey={apiKey} libraries={["places", "geometry"]}>
         <div className="flex flex-col h-screen font-body text-foreground">
@@ -468,7 +462,6 @@ export default function SurveyorApp({ apiKey }: { apiKey: string }) {
                         onCheckedChange={(checked: any) =>
 =======
                         onCheckedChange={(checked) =>
->>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f
                           setUnit(checked ? "sqft" : "sqm")
                         }
                       />
@@ -638,4 +631,3 @@ function MapInteractionHandler({
 <<<<<<< HEAD
 
 =======
->>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f

@@ -1,7 +1,6 @@
 <<<<<<< HEAD
 // import { useState } from "react";
 =======
->>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
 import { resolveGoogleMapsApiKey } from "../../../lib/utils";
 import { Button } from "./button";
@@ -17,7 +16,6 @@ export function MapAreaCalculator({ onAreaCalculated }: MapAreaCalculatorProps) 
   
 =======
   const apiKey = resolveGoogleMapsApiKey() || "";
->>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f
   return (
     <Card>
       <CardHeader>
