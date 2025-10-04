@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
 import { Button } from "./button";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
-import { MapPin, Calculator } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 interface AreaCalculatorProps {
   onAreaCalculated: (area: number) => void;
@@ -28,7 +28,7 @@ export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
     return Math.abs(area) * 111320 * 111320 / 2; // Convert to square meters
   }, []);
 
-  const handleMapClick = useCallback((event: google.maps.MapMouseEvent) => {
+  const handleMapClick = useCallback((event: any) => {
     if (!isDrawing || !event.latLng) return;
     
     const newPoint = event.latLng.toJSON();

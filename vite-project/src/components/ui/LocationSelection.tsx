@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion"; // ✅ fix import
+import { motion } from "framer-motion"; 
 import {
   Card,
   CardContent,
@@ -12,7 +12,7 @@ import { Button } from "./button";
 import { Input } from "./input";
 import { Label } from "./label";
 import { MapPin, Navigation, Search } from "lucide-react";
-import type { UserData } from "../types";
+import type { UserData } from "../../App";
 
 interface LocationSelectionProps {
   onNext: (data: Partial<UserData>) => void;
@@ -263,9 +263,11 @@ export function LocationSelection({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-center"
+          className="text-center space-y-2"
         >
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-blue-600 font-medium">
+            📏 The area of your house roof will be automatically detected after location selection
+          </p>          <p className="text-sm text-gray-500">
             Your location data is used only for rainfall
             calculations and system recommendations
           </p>

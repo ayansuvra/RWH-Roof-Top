@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { Button } from "./button";
 import { Users, Home, Building } from "lucide-react";
-import type { UserData } from "../types";
+import type { UserData } from "../../App";
 
 interface TankCapacitySelectionProps {
   onNext: (data: Partial<UserData>) => void;

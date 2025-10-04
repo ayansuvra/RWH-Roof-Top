@@ -4,9 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { Button } from "./button";
 import { Input } from "./input";
 import { Label } from "./label";
-import { Calculator, Home, Map } from "lucide-react";
-import { MapAreaCalculator } from "./MapAreaCalculator";
-import type { UserData } from "../types";
+import { Calculator, Home } from "lucide-react";
+import type { UserData } from "../../App";
 
 interface RooftopDetailsProps {
   onNext: (data: Partial<UserData>) => void;
@@ -30,7 +29,6 @@ export function RooftopDetails({
     data.rooftop?.type || ""
   );
   const [useCalculator, setUseCalculator] = useState(false);
-  const [useMapCalculator, setUseMapCalculator] = useState(false);
 
   useEffect(() => {
     if (length && width && useCalculator) {
@@ -96,38 +94,21 @@ export function RooftopDetails({
           transition={{ duration: 0.5 }}
           className="space-y-4"
         >
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-4 mb-4">
             <Button
-              variant={!useCalculator && !useMapCalculator ? "default" : "outline"}
-              onClick={() => {
-                setUseCalculator(false);
-                setUseMapCalculator(false);
-              }}
+              variant={!useCalculator ? "default" : "outline"}
+              onClick={() => setUseCalculator(false)}
               className="flex-1"
             >
               Direct Area Input
             </Button>
             <Button
               variant={useCalculator ? "default" : "outline"}
-              onClick={() => {
-                setUseCalculator(true);
-                setUseMapCalculator(false);
-              }}
+              onClick={() => setUseCalculator(true)}
               className="flex-1"
             >
               <Calculator className="w-4 h-4 mr-2" />
               Calculate Area
-            </Button>
-            <Button
-              variant={useMapCalculator ? "default" : "outline"}
-              onClick={() => {
-                setUseCalculator(false);
-                setUseMapCalculator(true);
-              }}
-              className="flex-1"
-            >
-              <Map className="w-4 h-4 mr-2" />
-              Map Tool
             </Button>
           </div>
 
@@ -154,10 +135,6 @@ export function RooftopDetails({
                 />
               </div>
             </div>
-          ) : useMapCalculator ? (
-            <MapAreaCalculator
-              onAreaCalculated={(calculatedArea) => setArea(calculatedArea.toString())}
-            />
           ) : (
             <div className="space-y-2">
               <Label htmlFor="area">Total Rooftop Area (square meters)</Label>

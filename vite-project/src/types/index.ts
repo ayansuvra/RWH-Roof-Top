@@ -1,5 +1,3 @@
-export type AppState = "language" | "login" | "onboarding" | "results";
-
 export interface UserData {
   language: string;
   location: {

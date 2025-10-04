@@ -6,8 +6,8 @@ import {
   Map,
   useMap,
   useApiIsLoaded,
-  MapCameraChangedEvent,
 } from "@vis.gl/react-google-maps";
+import type { MapCameraChangedEvent } from "@vis.gl/react-google-maps";
 import {
   DraftingCompass,
   Loader2,
