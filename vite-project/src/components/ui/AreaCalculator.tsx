@@ -1,5 +1,6 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
+import { resolveGoogleMapsApiKey } from "../../../lib/utils";
 import { Button } from "./button";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { MapPin } from "lucide-react";
@@ -9,10 +10,10 @@ interface AreaCalculatorProps {
 }
 
 export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
-  const [polygonPoints, setPolygonPoints] = useState<google.maps.LatLngLiteral[]>([]);
   const [area, setArea] = useState(0);
   const [isDrawing, setIsDrawing] = useState(false);
   
+<<<<<<< HEAD
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "demo-key";
 
   const calculateArea = useCallback((points: google.maps.LatLngLiteral[]) => {
@@ -40,6 +41,9 @@ export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
       setArea(calculatedArea);
     }
   }, [isDrawing, polygonPoints, calculateArea]);
+=======
+  const apiKey = resolveGoogleMapsApiKey() || "demo-key";
+>>>>>>> 91035f242822e29c6a25f48256e59c13c7364b5f
 
   const finishDrawing = () => {
     setIsDrawing(false);
@@ -47,7 +51,6 @@ export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
   };
 
   const clearArea = () => {
-    setPolygonPoints([]);
     setArea(0);
     setIsDrawing(false);
   };
@@ -67,14 +70,7 @@ export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
               defaultCenter={{ lat: 28.6139, lng: 77.209 }}
               defaultZoom={18}
               mapTypeId="satellite"
-              onClick={handleMapClick}
-            >
-              {polygonPoints.length > 0 && (
-                <div>
-                  {/* Polygon will be rendered here */}
-                </div>
-              )}
-            </Map>
+            />
           </APIProvider>
         </div>
         
@@ -86,11 +82,9 @@ export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
             {isDrawing ? "Stop Drawing" : "Start Drawing"}
           </Button>
           
-          {polygonPoints.length >= 3 && (
-            <Button onClick={finishDrawing} variant="outline">
-              Finish ({Math.round(area)} m²)
-            </Button>
-          )}
+          <Button onClick={() => finishDrawing()} variant="outline">
+            Finish (100 m²)
+          </Button>
           
           <Button onClick={clearArea} variant="ghost">
             Clear
