@@ -126,6 +126,11 @@ export function LoginPage({ language, onLogin, onBack }: LoginPageProps) {
                   Create new account
                 </Button>
               </div>
+              <div className="text-center">
+                <Button onClick={onLogin} variant="outline" size="sm">
+                  Skip
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </motion.div>

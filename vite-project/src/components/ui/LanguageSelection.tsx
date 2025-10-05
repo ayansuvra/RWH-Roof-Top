@@ -73,6 +73,11 @@ export function LanguageSelection({ onLanguageSelect }: LanguageSelectionProps) 
                 </motion.div>
               ))}
             </div>
+            <div className="text-center mt-4">
+              <Button onClick={() => onLanguageSelect('English')} variant="outline" size="sm">
+                Skip
+              </Button>
+            </div>
           </CardContent>
         </Card>
       </motion.div>

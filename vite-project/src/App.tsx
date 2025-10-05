@@ -4,8 +4,12 @@ import { LanguageSelection } from "./components/ui/LanguageSelection";
 import { LoginPage } from "./components/ui/LoginPage";
 import { OnboardingFlow } from "./components/ui/OnboardingFlow";
 import { ResultsPage } from "./components/ui/ResultsPage";
+import RooftopSurveyor from "./components/ui/RooftopSurveyor";
+import BasicMapSurveyor from "./components/ui/BasicMapSurveyor";
+import SimpleAreaCalculator from "./components/ui/SimpleAreaCalculator";
+import ImageAreaSelector from "./components/ui/ImageAreaSelector";
 
-export type AppState = "language" | "login" | "onboarding" | "results";
+export type AppState = "language" | "login" | "onboarding" | "surveyor" | "results";
 
 export interface UserData {
   language: string;
@@ -35,6 +39,14 @@ export default function App() {
 
   const handleLogin = () => {
     setIsLoggedIn(true);
+    setCurrentState("surveyor");
+  };
+
+  const handleAreaCalculated = (area: number) => {
+    setUserData(prev => ({ 
+      ...prev, 
+      rooftop: { area, type: "flat" as const }
+    }));
     setCurrentState("onboarding");
   };
 
@@ -46,8 +58,10 @@ export default function App() {
   const handleBack = () => {
     if (currentState === "login") {
       setCurrentState("language");
-    } else if (currentState === "onboarding") {
+    } else if (currentState === "surveyor") {
       setCurrentState("login");
+    } else if (currentState === "onboarding") {
+      setCurrentState("surveyor");
     } else if (currentState === "results") {
       setCurrentState("onboarding");
     }
@@ -59,6 +73,9 @@ export default function App() {
     out: { opacity: 0, x: -100 },
   };
 
+  // Check if Google Maps API key is available
+  const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "YOUR_GOOGLE_MAPS_API_KEY";
+  const hasValidApiKey = GOOGLE_MAPS_API_KEY && GOOGLE_MAPS_API_KEY !== "YOUR_GOOGLE_MAPS_API_KEY" && GOOGLE_MAPS_API_KEY !== "YOUR_ACTUAL_API_KEY_HERE";
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center">
@@ -90,6 +107,19 @@ export default function App() {
               onLogin={handleLogin}
               onBack={handleBack}
             />
+          </motion.div>
+        )}
+
+        {currentState === "surveyor" && (
+          <motion.div
+            key="surveyor"
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={pageVariants}
+            className="w-full h-screen"
+          >
+            <ImageAreaSelector onAreaCalculated={handleAreaCalculated} />
           </motion.div>
         )}
 

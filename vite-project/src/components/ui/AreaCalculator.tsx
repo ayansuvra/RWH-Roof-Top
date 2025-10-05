@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
-import { resolveGoogleMapsApiKey } from "../../../lib/utils";
 import { Button } from "./button";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { MapPin } from "lucide-react";
@@ -12,8 +11,8 @@ interface AreaCalculatorProps {
 export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
   const [area, setArea] = useState(0);
   const [isDrawing, setIsDrawing] = useState(false);
+  const [polygonPoints, setPolygonPoints] = useState<google.maps.LatLngLiteral[]>([]);
   
-<<<<<<< HEAD
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "demo-key";
 
   const calculateArea = useCallback((points: google.maps.LatLngLiteral[]) => {
@@ -41,8 +40,6 @@ export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
       setArea(calculatedArea);
     }
   }, [isDrawing, polygonPoints, calculateArea]);
-=======
-  const apiKey = resolveGoogleMapsApiKey() || "demo-key";
 
   const finishDrawing = () => {
     setIsDrawing(false);
@@ -51,6 +48,7 @@ export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
 
   const clearArea = () => {
     setArea(0);
+    setPolygonPoints([]);
     setIsDrawing(false);
   };
 
@@ -69,6 +67,7 @@ export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
               defaultCenter={{ lat: 28.6139, lng: 77.209 }}
               defaultZoom={18}
               mapTypeId="satellite"
+              onClick={handleMapClick}
             />
           </APIProvider>
         </div>
@@ -81,8 +80,8 @@ export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
             {isDrawing ? "Stop Drawing" : "Start Drawing"}
           </Button>
           
-          <Button onClick={() => finishDrawing()} variant="outline">
-            Finish (100 m²)
+          <Button onClick={finishDrawing} variant="outline">
+            Finish ({Math.round(area)} m²)
           </Button>
           
           <Button onClick={clearArea} variant="ghost">
