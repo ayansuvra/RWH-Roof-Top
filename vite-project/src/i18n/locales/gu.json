@@ -1,0 +1,55 @@
+{
+  "common": {
+    "next": "આગળ",
+    "back": "પાછળ",
+    "continue": "ચાલુ રાખો",
+    "cancel": "રદ કરો",
+    "save": "સેવ કરો",
+    "loading": "લોડ થઈ રહ્યું છે...",
+    "error": "ભૂલ",
+    "success": "સફળતા"
+  },
+  "nav": {
+    "home": "હોમ",
+    "about": "વિશે",
+    "contact": "સંપર્ક",
+    "language": "ભાષા"
+  },
+  "onboarding": {
+    "welcome": "વરસાદી પાણી સંગ્રહ પ્રણાલીમાં આપનું સ્વાગત છે",
+    "subtitle": "તમારું ટકાઉ પાણી સમાધાન ડિઝાઇન કરો",
+    "getStarted": "શરૂ કરો",
+    "step1": "સ્થાન પસંદગી",
+    "step2": "સિસ્ટમ ડિઝાઇન",
+    "step3": "ખર્ચ વિશ્લેષણ",
+    "step4": "પરિણામો"
+  },
+  "location": {
+    "title": "તમારું સ્થાન પસંદ કરો",
+    "subtitle": "ચોક્કસ વરસાદ ડેટા અને સિસ્ટમ ભલામણો માટે તમારું સ્થાન પસંદ કરો",
+    "searchPlaceholder": "તમારું સરનામું અથવા શહેર શોધો",
+    "detectLocation": "મારું સ્થાન શોધો",
+    "selectedLocation": "પસંદ કરેલ સ્થાન"
+  },
+  "system": {
+    "title": "સિસ્ટમ ડિઝાઇન",
+    "roofArea": "છતનો વિસ્તાર",
+    "roofAreaUnit": "ચોરસ ફૂટ",
+    "tankCapacity": "ટાંકીની ક્ષમતા",
+    "tankCapacityUnit": "ગેલન",
+    "systemType": "સિસ્ટમનો પ્રકાર",
+    "basic": "મૂળભૂત",
+    "advanced": "અદ્યતન",
+    "premium": "પ્રીમિયમ"
+  },
+  "results": {
+    "title": "તમારી વરસાદી પાણી સંગ્રહ પ્રણાલી",
+    "costAnalysis": "ખર્ચ વિશ્લેષણ",
+    "roiAnalysis": "ROI વિશ્લેષણ",
+    "systemSpecs": "સિસ્ટમ વિશેષતાઓ",
+    "estimatedCost": "અંદાજિત ખર્ચ",
+    "annualSavings": "વાર્ષિક બચત",
+    "paybackPeriod": "પરત ચૂકવણી સમયગાળો",
+    "downloadReport": "રિપોર્ટ ડાઉનલોડ કરો"
+  }
+}

@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from './button';
 import { Card, CardContent, CardHeader, CardTitle } from './card';
 import { MapPin, Square } from 'lucide-react';
@@ -16,6 +17,7 @@ interface ImageAreaSelectorProps {
 type SelectionMode = 'manual' | 'ai' | 'rectangle' | 'calculator';
 
 const ImageAreaSelector: React.FC<ImageAreaSelectorProps> = ({ onAreaCalculated }) => {
+  const { t, i18n } = useTranslation();
   const [points, setPoints] = useState<Point[]>([]);
   const [area, setArea] = useState<number>(0);
   const [isComplete, setIsComplete] = useState<boolean>(false);
@@ -274,7 +276,7 @@ const ImageAreaSelector: React.FC<ImageAreaSelectorProps> = ({ onAreaCalculated 
   };
 
   const openCalculator = () => {
-    const manualArea = prompt("Enter area in square meters:");
+    const manualArea = prompt("Enter roof area in square meters:");
     if (manualArea && !isNaN(Number(manualArea))) {
       setArea(Number(manualArea));
       onAreaCalculated(Number(manualArea));
@@ -306,8 +308,8 @@ const ImageAreaSelector: React.FC<ImageAreaSelectorProps> = ({ onAreaCalculated 
             <div className="space-y-4">
               <div className="text-sm text-gray-600">
                 {mode === 'ai' ? 
-                  'Click anywhere on the image to automatically detect and select the roof area using AI analysis.' :
-                  'Click on the rooftop image to mark the corners of your roof area. You need at least 3 points to calculate the area.'
+                  "Click 'AI Detect' to automatically identify rooftop boundaries" :
+                  "Click points around your rooftop to trace its outline"
                 }
               </div>
 
@@ -318,7 +320,7 @@ const ImageAreaSelector: React.FC<ImageAreaSelectorProps> = ({ onAreaCalculated 
                   onClick={() => setMode('ai')}
                   disabled={isAnalyzing}
                 >
-                  {isAnalyzing ? '🔍 Analyzing...' : '🤖 AI Detect Roof'}
+                  {isAnalyzing ? "🔍 Analyzing..." : "🤖 AI Detect Roof"}
                 </Button>
                 <Button 
                   variant={mode === 'manual' ? 'default' : 'outline'} 
@@ -366,9 +368,14 @@ const ImageAreaSelector: React.FC<ImageAreaSelectorProps> = ({ onAreaCalculated 
 
               <div className="flex justify-between items-center">
                 <div className="text-sm">
-                  Mode: {mode === 'ai' ? 'AI Detection' : mode === 'rectangle' ? 'Rectangle' : mode === 'calculator' ? 'Calculator' : 'Manual Drawing'}
-                  {mode === 'rectangle' && rectangleStart && ' - Click second corner'}
-                  {points.length > 0 && ' - Drag points to adjust'}
+                  Mode: {
+                    mode === 'ai' ? 'AI Detection' : 
+                    mode === 'rectangle' ? 'Rectangle' : 
+                    mode === 'calculator' ? 'Calculator' : 
+                    'Manual Drawing'
+                  }
+                  {mode === 'rectangle' && rectangleStart && " - Click second corner"}
+                  {points.length > 0 && " - Drag to adjust"}
                   <br />
                   Points selected: {points.length}
                   {points.length >= 3 && (

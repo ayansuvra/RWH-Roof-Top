@@ -1,0 +1,55 @@
+{
+  "common": {
+    "next": "Suivant",
+    "back": "Retour",
+    "continue": "Continuer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact",
+    "language": "Langue"
+  },
+  "onboarding": {
+    "welcome": "Bienvenue dans le Système de Récupération d'Eau de Pluie",
+    "subtitle": "Concevez votre solution d'eau durable",
+    "getStarted": "Commencer",
+    "step1": "Sélection de l'Emplacement",
+    "step2": "Conception du Système",
+    "step3": "Analyse des Coûts",
+    "step4": "Résultats"
+  },
+  "location": {
+    "title": "Sélectionnez Votre Emplacement",
+    "subtitle": "Choisissez votre emplacement pour obtenir des données de précipitations précises et des recommandations système",
+    "searchPlaceholder": "Recherchez votre adresse ou ville",
+    "detectLocation": "Détecter Ma Position",
+    "selectedLocation": "Emplacement Sélectionné"
+  },
+  "system": {
+    "title": "Conception du Système",
+    "roofArea": "Surface du Toit",
+    "roofAreaUnit": "pieds²",
+    "tankCapacity": "Capacité du Réservoir",
+    "tankCapacityUnit": "gallons",
+    "systemType": "Type de Système",
+    "basic": "Basique",
+    "advanced": "Avancé",
+    "premium": "Premium"
+  },
+  "results": {
+    "title": "Votre Système de Récupération d'Eau de Pluie",
+    "costAnalysis": "Analyse des Coûts",
+    "roiAnalysis": "Analyse du ROI",
+    "systemSpecs": "Spécifications du Système",
+    "estimatedCost": "Coût Estimé",
+    "annualSavings": "Économies Annuelles",
+    "paybackPeriod": "Période de Récupération",
+    "downloadReport": "Télécharger le Rapport"
+  }
+}

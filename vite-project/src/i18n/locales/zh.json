@@ -1,0 +1,55 @@
+{
+  "common": {
+    "next": "下一步",
+    "back": "返回",
+    "continue": "继续",
+    "cancel": "取消",
+    "save": "保存",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "language": "语言"
+  },
+  "onboarding": {
+    "welcome": "欢迎使用雨水收集系统",
+    "subtitle": "设计您的可持续水资源解决方案",
+    "getStarted": "开始使用",
+    "step1": "位置选择",
+    "step2": "系统设计",
+    "step3": "成本分析",
+    "step4": "结果"
+  },
+  "location": {
+    "title": "选择您的位置",
+    "subtitle": "选择您的位置以获取准确的降雨数据和系统建议",
+    "searchPlaceholder": "搜索您的地址或城市",
+    "detectLocation": "检测我的位置",
+    "selectedLocation": "已选位置"
+  },
+  "system": {
+    "title": "系统设计",
+    "roofArea": "屋顶面积",
+    "roofAreaUnit": "平方英尺",
+    "tankCapacity": "水箱容量",
+    "tankCapacityUnit": "加仑",
+    "systemType": "系统类型",
+    "basic": "基础版",
+    "advanced": "高级版",
+    "premium": "旗舰版"
+  },
+  "results": {
+    "title": "您的雨水收集系统",
+    "costAnalysis": "成本分析",
+    "roiAnalysis": "投资回报分析",
+    "systemSpecs": "系统规格",
+    "estimatedCost": "预估成本",
+    "annualSavings": "年度节省",
+    "paybackPeriod": "回收期",
+    "downloadReport": "下载报告"
+  }
+}

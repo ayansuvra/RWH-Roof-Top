@@ -1,0 +1,55 @@
+{
+  "common": {
+    "next": "आगे",
+    "back": "पीछे",
+    "continue": "जारी रखें",
+    "cancel": "रद्द करें",
+    "save": "सहेजें",
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "success": "सफलता"
+  },
+  "nav": {
+    "home": "होम",
+    "about": "हमारे बारे में",
+    "contact": "संपर्क",
+    "language": "भाषा"
+  },
+  "onboarding": {
+    "welcome": "वर्षा जल संचयन प्रणाली में आपका स्वागत है",
+    "subtitle": "अपना टिकाऊ जल समाधान डिज़ाइन करें",
+    "getStarted": "शुरू करें",
+    "step1": "स्थान चयन",
+    "step2": "सिस्टम डिज़ाइन",
+    "step3": "लागत विश्लेषण",
+    "step4": "परिणाम"
+  },
+  "location": {
+    "title": "अपना स्थान चुनें",
+    "subtitle": "सटीक वर्षा डेटा और सिस्टम सिफारिशों के लिए अपना स्थान चुनें",
+    "searchPlaceholder": "अपना पता या शहर खोजें",
+    "detectLocation": "मेरा स्थान खोजें",
+    "selectedLocation": "चयनित स्थान"
+  },
+  "system": {
+    "title": "सिस्टम डिज़ाइन",
+    "roofArea": "छत का क्षेत्रफल",
+    "roofAreaUnit": "वर्ग फुट",
+    "tankCapacity": "टैंक की क्षमता",
+    "tankCapacityUnit": "गैलन",
+    "systemType": "सिस्टम प्रकार",
+    "basic": "बेसिक",
+    "advanced": "एडवांस्ड",
+    "premium": "प्रीमियम"
+  },
+  "results": {
+    "title": "आपकी वर्षा जल संचयन प्रणाली",
+    "costAnalysis": "लागत विश्लेषण",
+    "roiAnalysis": "ROI विश्लेषण",
+    "systemSpecs": "सिस्टम विनिर्देश",
+    "estimatedCost": "अनुमानित लागत",
+    "annualSavings": "वार्षिक बचत",
+    "paybackPeriod": "वापसी अवधि",
+    "downloadReport": "रिपोर्ट डाउनलोड करें"
+  }
+}

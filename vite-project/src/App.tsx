@@ -1,12 +1,9 @@
-import  { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion"; // ✅ corrected import
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { LanguageSelection } from "./components/ui/LanguageSelection";
 import { LoginPage } from "./components/ui/LoginPage";
 import { OnboardingFlow } from "./components/ui/OnboardingFlow";
 import { ResultsPage } from "./components/ui/ResultsPage";
-import RooftopSurveyor from "./components/ui/RooftopSurveyor";
-import BasicMapSurveyor from "./components/ui/BasicMapSurveyor";
-import SimpleAreaCalculator from "./components/ui/SimpleAreaCalculator";
 import ImageAreaSelector from "./components/ui/ImageAreaSelector";
 
 export type AppState = "language" | "login" | "onboarding" | "surveyor" | "results";
@@ -30,16 +27,22 @@ export interface UserData {
 export default function App() {
   const [currentState, setCurrentState] = useState<AppState>("language");
   const [userData, setUserData] = useState<Partial<UserData>>({});
-  const [, setIsLoggedIn] = useState(false);
 
   const handleLanguageSelect = (language: string) => {
-    setUserData((prev) => ({ ...prev, language }));
+    setUserData(prev => ({ ...prev, language }));
+    setCurrentState("login");
+  };
+
+  const handleSkip = () => {
     setCurrentState("login");
   };
 
   const handleLogin = () => {
-    setIsLoggedIn(true);
     setCurrentState("surveyor");
+  };
+
+  const handleBack = () => {
+    setCurrentState("language");
   };
 
   const handleAreaCalculated = (area: number) => {
@@ -55,30 +58,14 @@ export default function App() {
     setCurrentState("results");
   };
 
-  const handleBack = () => {
-    if (currentState === "login") {
-      setCurrentState("language");
-    } else if (currentState === "surveyor") {
-      setCurrentState("login");
-    } else if (currentState === "onboarding") {
-      setCurrentState("surveyor");
-    } else if (currentState === "results") {
-      setCurrentState("onboarding");
-    }
-  };
-
   const pageVariants = {
     initial: { opacity: 0, x: 100 },
     in: { opacity: 1, x: 0 },
     out: { opacity: 0, x: -100 },
   };
 
-  // Check if Google Maps API key is available
-  const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "YOUR_GOOGLE_MAPS_API_KEY";
-  const hasValidApiKey = GOOGLE_MAPS_API_KEY && GOOGLE_MAPS_API_KEY !== "YOUR_GOOGLE_MAPS_API_KEY" && GOOGLE_MAPS_API_KEY !== "YOUR_ACTUAL_API_KEY_HERE";
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
       <AnimatePresence mode="wait">
         {currentState === "language" && (
           <motion.div
@@ -87,9 +74,11 @@ export default function App() {
             animate="in"
             exit="out"
             variants={pageVariants}
-            className="w-full"
           >
-            <LanguageSelection onLanguageSelect={handleLanguageSelect} />
+            <LanguageSelection 
+              onLanguageSelect={handleLanguageSelect}
+              onSkip={handleSkip}
+            />
           </motion.div>
         )}
 
@@ -100,13 +89,8 @@ export default function App() {
             animate="in"
             exit="out"
             variants={pageVariants}
-            className="w-full"
           >
-            <LoginPage
-              language={userData.language || "English"}
-              onLogin={handleLogin}
-              onBack={handleBack}
-            />
+            <LoginPage onLogin={handleLogin} onBack={handleBack} />
           </motion.div>
         )}
 
@@ -117,7 +101,7 @@ export default function App() {
             animate="in"
             exit="out"
             variants={pageVariants}
-            className="w-full h-screen"
+            className="h-screen"
           >
             <ImageAreaSelector onAreaCalculated={handleAreaCalculated} />
           </motion.div>
@@ -130,12 +114,10 @@ export default function App() {
             animate="in"
             exit="out"
             variants={pageVariants}
-            className="w-full"
           >
             <OnboardingFlow
               onComplete={handleOnboardingComplete}
               initialData={userData}
-              onBack={handleBack}
             />
           </motion.div>
         )}
@@ -147,7 +129,6 @@ export default function App() {
             animate="in"
             exit="out"
             variants={pageVariants}
-            className="w-full"
           >
             <ResultsPage userData={userData as UserData} />
           </motion.div>
