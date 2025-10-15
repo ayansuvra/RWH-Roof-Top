@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
-import { resolveGoogleMapsApiKey } from "../../../lib/utils";
 import { Button } from "./button";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { MapPin } from "lucide-react";
@@ -12,8 +11,35 @@ interface AreaCalculatorProps {
 export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
   const [area, setArea] = useState(0);
   const [isDrawing, setIsDrawing] = useState(false);
+  const [polygonPoints, setPolygonPoints] = useState<google.maps.LatLngLiteral[]>([]);
   
-  const apiKey = resolveGoogleMapsApiKey() || "demo-key";
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "demo-key";
+
+  const calculateArea = useCallback((points: google.maps.LatLngLiteral[]) => {
+    if (points.length < 3) return 0;
+    
+    // Simple polygon area calculation using shoelace formula
+    let area = 0;
+    for (let i = 0; i < points.length; i++) {
+      const j = (i + 1) % points.length;
+      area += points[i].lat * points[j].lng;
+      area -= points[j].lat * points[i].lng;
+    }
+    return Math.abs(area) * 111320 * 111320 / 2; // Convert to square meters
+  }, []);
+
+  const handleMapClick = useCallback((event: any) => {
+    if (!isDrawing || !event.latLng) return;
+    
+    const newPoint = event.latLng.toJSON();
+    const newPoints = [...polygonPoints, newPoint];
+    setPolygonPoints(newPoints);
+    
+    if (newPoints.length >= 3) {
+      const calculatedArea = calculateArea(newPoints);
+      setArea(calculatedArea);
+    }
+  }, [isDrawing, polygonPoints, calculateArea]);
 
   const finishDrawing = () => {
     setIsDrawing(false);
@@ -22,6 +48,7 @@ export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
 
   const clearArea = () => {
     setArea(0);
+    setPolygonPoints([]);
     setIsDrawing(false);
   };
 
@@ -40,6 +67,7 @@ export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
               defaultCenter={{ lat: 28.6139, lng: 77.209 }}
               defaultZoom={18}
               mapTypeId="satellite"
+              onClick={handleMapClick}
             />
           </APIProvider>
         </div>
@@ -52,8 +80,8 @@ export function AreaCalculator({ onAreaCalculated }: AreaCalculatorProps) {
             {isDrawing ? "Stop Drawing" : "Start Drawing"}
           </Button>
           
-          <Button onClick={() => finishDrawing()} variant="outline">
-            Finish (100 m²)
+          <Button onClick={finishDrawing} variant="outline">
+            Finish ({Math.round(area)} m²)
           </Button>
           
           <Button onClick={clearArea} variant="ghost">

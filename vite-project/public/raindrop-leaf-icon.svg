@@ -1,0 +1,10 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Raindrop -->
+  <path d="M16 4C16 4 8 12 8 18C8 22.4183 11.5817 26 16 26C20.4183 26 24 22.4183 24 18C24 12 16 4 16 4Z" fill="#3B82F6" stroke="#1E40AF" stroke-width="1"/>
+  
+  <!-- Leaf -->
+  <path d="M18 8C18 8 22 10 24 14C25 16 24 18 22 18C20 18 18 16 18 14V8Z" fill="#10B981" stroke="#059669" stroke-width="1"/>
+  
+  <!-- Highlight on raindrop -->
+  <ellipse cx="14" cy="12" rx="2" ry="3" fill="#60A5FA" opacity="0.6"/>
+</svg>

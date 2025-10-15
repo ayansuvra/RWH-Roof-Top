@@ -51,3 +51,6 @@ export async function suggestRooftopBoundaries(
     },
   };
 }
+<<<<<<< HEAD
+
+=======

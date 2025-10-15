@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { Button } from "./button";
 import { Input } from "./input";
@@ -48,7 +49,8 @@ const animationSteps: Step[] = [
   },
 ];
 
-export function LoginPage({ language, onLogin, onBack }: LoginPageProps) {
+export function LoginPage({ onLogin, onBack }: LoginPageProps) {
+  const { t } = useTranslation();
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -88,10 +90,9 @@ export function LoginPage({ language, onLogin, onBack }: LoginPageProps) {
                   <ArrowLeft className="w-4 h-4 mr-1" />
                   Back
                 </Button>
-                <p className="text-sm text-gray-600">{language}</p>
               </div>
               <CardTitle className="text-center text-blue-800">
-                Sign In to RainHarvest
+                Welcome to Rainwater Harvesting
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -119,11 +120,16 @@ export function LoginPage({ language, onLogin, onBack }: LoginPageProps) {
                 className="w-full bg-blue-600 hover:bg-blue-700"
                 onClick={handleLogin}
               >
-                Sign In
+                Login
               </Button>
               <div className="text-center">
                 <Button variant="link" className="text-sm text-blue-600">
                   Create new account
+                </Button>
+              </div>
+              <div className="text-center">
+                <Button onClick={onLogin} variant="outline" size="sm">
+                  Skip
                 </Button>
               </div>
             </CardContent>

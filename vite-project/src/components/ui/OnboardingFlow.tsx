@@ -10,7 +10,7 @@ import { TankCapacitySelection } from "./TankCapacitySelection"
 import { WaterSourceSelection } from "./WaterSourceSelection"
 import { Button } from "./button"
 import { ArrowLeft } from "lucide-react"
-import type { UserData } from "../../types"
+import type { UserData } from "../../App"
 
 interface OnboardingFlowProps {
   onComplete: (data: UserData) => void
@@ -108,6 +108,22 @@ export function OnboardingFlow({
               >
                 <ArrowLeft className="w-4 h-4 mr-1" />
                 Back
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => onComplete({
+                  language: 'English',
+                  location: { name: 'Default', coordinates: { lat: 0, lng: 0 } },
+                  useType: 'household',
+                  hasTank: false,
+                  rooftop: { area: 100, type: 'flat' },
+                  tankCapacity: 1000,
+                  waterSource: 'municipality'
+                } as UserData)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                Skip
               </Button>
               <h2 className="text-blue-800 font-semibold">
                 Setup Your Rainwater Harvesting System

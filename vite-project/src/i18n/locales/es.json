@@ -1,0 +1,55 @@
+{
+  "common": {
+    "next": "Siguiente",
+    "back": "Atrás",
+    "continue": "Continuar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "onboarding": {
+    "welcome": "Bienvenido al Sistema de Recolección de Agua de Lluvia",
+    "subtitle": "Diseña tu solución de agua sostenible",
+    "getStarted": "Comenzar",
+    "step1": "Selección de Ubicación",
+    "step2": "Diseño del Sistema",
+    "step3": "Análisis de Costos",
+    "step4": "Resultados"
+  },
+  "location": {
+    "title": "Selecciona Tu Ubicación",
+    "subtitle": "Elige tu ubicación para obtener datos precisos de lluvia y recomendaciones del sistema",
+    "searchPlaceholder": "Busca tu dirección o ciudad",
+    "detectLocation": "Detectar Mi Ubicación",
+    "selectedLocation": "Ubicación Seleccionada"
+  },
+  "system": {
+    "title": "Diseño del Sistema",
+    "roofArea": "Área del Techo",
+    "roofAreaUnit": "pies²",
+    "tankCapacity": "Capacidad del Tanque",
+    "tankCapacityUnit": "galones",
+    "systemType": "Tipo de Sistema",
+    "basic": "Básico",
+    "advanced": "Avanzado",
+    "premium": "Premium"
+  },
+  "results": {
+    "title": "Tu Sistema de Recolección de Agua de Lluvia",
+    "costAnalysis": "Análisis de Costos",
+    "roiAnalysis": "Análisis de ROI",
+    "systemSpecs": "Especificaciones del Sistema",
+    "estimatedCost": "Costo Estimado",
+    "annualSavings": "Ahorros Anuales",
+    "paybackPeriod": "Período de Recuperación",
+    "downloadReport": "Descargar Reporte"
+  }
+}

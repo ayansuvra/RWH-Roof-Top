@@ -1,0 +1,55 @@
+{
+  "common": {
+    "next": "Next",
+    "back": "Back",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "save": "Save",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "onboarding": {
+    "welcome": "Welcome to Rainwater Harvesting System",
+    "subtitle": "Design your sustainable water solution",
+    "getStarted": "Get Started",
+    "step1": "Location Selection",
+    "step2": "System Design",
+    "step3": "Cost Analysis",
+    "step4": "Results"
+  },
+  "location": {
+    "title": "Select Your Location",
+    "subtitle": "Choose your location to get accurate rainfall data and system recommendations",
+    "searchPlaceholder": "Search for your address or city",
+    "detectLocation": "Detect My Location",
+    "selectedLocation": "Selected Location"
+  },
+  "system": {
+    "title": "System Design",
+    "roofArea": "Roof Area",
+    "roofAreaUnit": "sq ft",
+    "tankCapacity": "Tank Capacity",
+    "tankCapacityUnit": "gallons",
+    "systemType": "System Type",
+    "basic": "Basic",
+    "advanced": "Advanced",
+    "premium": "Premium"
+  },
+  "results": {
+    "title": "Your Rainwater Harvesting System",
+    "costAnalysis": "Cost Analysis",
+    "roiAnalysis": "ROI Analysis",
+    "systemSpecs": "System Specifications",
+    "estimatedCost": "Estimated Cost",
+    "annualSavings": "Annual Savings",
+    "paybackPeriod": "Payback Period",
+    "downloadReport": "Download Report"
+  }
+}

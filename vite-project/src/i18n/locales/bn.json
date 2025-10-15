@@ -1,0 +1,55 @@
+{
+  "common": {
+    "next": "পরবর্তী",
+    "back": "পিছনে",
+    "continue": "চালিয়ে যান",
+    "cancel": "বাতিল",
+    "save": "সংরক্ষণ",
+    "loading": "লোড হচ্ছে...",
+    "error": "ত্রুটি",
+    "success": "সফল"
+  },
+  "nav": {
+    "home": "হোম",
+    "about": "সম্পর্কে",
+    "contact": "যোগাযোগ",
+    "language": "ভাষা"
+  },
+  "onboarding": {
+    "welcome": "বৃষ্টির পানি সংগ্রহ ব্যবস্থায় স্বাগতম",
+    "subtitle": "আপনার টেকসই পানি সমাধান ডিজাইন করুন",
+    "getStarted": "শুরু করুন",
+    "step1": "অবস্থান নির্বাচন",
+    "step2": "সিস্টেম ডিজাইন",
+    "step3": "খরচ বিশ্লেষণ",
+    "step4": "ফলাফল"
+  },
+  "location": {
+    "title": "আপনার অবস্থান নির্বাচন করুন",
+    "subtitle": "সঠিক বৃষ্টিপাতের তথ্য এবং সিস্টেম সুপারিশের জন্য আপনার অবস্থান বেছে নিন",
+    "searchPlaceholder": "আপনার ঠিকানা বা শহর খুঁজুন",
+    "detectLocation": "আমার অবস্থান খুঁজুন",
+    "selectedLocation": "নির্বাচিত অবস্থান"
+  },
+  "system": {
+    "title": "সিস্টেম ডিজাইন",
+    "roofArea": "ছাদের এলাকা",
+    "roofAreaUnit": "বর্গফুট",
+    "tankCapacity": "ট্যাঙ্কের ধারণক্ষমতা",
+    "tankCapacityUnit": "গ্যালন",
+    "systemType": "সিস্টেমের ধরন",
+    "basic": "মৌলিক",
+    "advanced": "উন্নত",
+    "premium": "প্রিমিয়াম"
+  },
+  "results": {
+    "title": "আপনার বৃষ্টির পানি সংগ্রহ ব্যবস্থা",
+    "costAnalysis": "খরচ বিশ্লেষণ",
+    "roiAnalysis": "ROI বিশ্লেষণ",
+    "systemSpecs": "সিস্টেম বিশেষত্ব",
+    "estimatedCost": "আনুমানিক খরচ",
+    "annualSavings": "বার্ষিক সঞ্চয়",
+    "paybackPeriod": "ফেরত সময়কাল",
+    "downloadReport": "রিপোর্ট ডাউনলোড"
+  }
+}

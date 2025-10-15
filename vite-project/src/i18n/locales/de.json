@@ -1,0 +1,55 @@
+{
+  "common": {
+    "next": "Weiter",
+    "back": "Zurück",
+    "continue": "Fortfahren",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolg"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "language": "Sprache"
+  },
+  "onboarding": {
+    "welcome": "Willkommen beim Regenwasser-Sammelsystem",
+    "subtitle": "Entwerfen Sie Ihre nachhaltige Wasserlösung",
+    "getStarted": "Loslegen",
+    "step1": "Standortauswahl",
+    "step2": "Systemdesign",
+    "step3": "Kostenanalyse",
+    "step4": "Ergebnisse"
+  },
+  "location": {
+    "title": "Wählen Sie Ihren Standort",
+    "subtitle": "Wählen Sie Ihren Standort für genaue Niederschlagsdaten und Systemempfehlungen",
+    "searchPlaceholder": "Suchen Sie nach Ihrer Adresse oder Stadt",
+    "detectLocation": "Meinen Standort Erkennen",
+    "selectedLocation": "Ausgewählter Standort"
+  },
+  "system": {
+    "title": "Systemdesign",
+    "roofArea": "Dachfläche",
+    "roofAreaUnit": "Quadratfuß",
+    "tankCapacity": "Tankkapazität",
+    "tankCapacityUnit": "Gallonen",
+    "systemType": "Systemtyp",
+    "basic": "Basis",
+    "advanced": "Erweitert",
+    "premium": "Premium"
+  },
+  "results": {
+    "title": "Ihr Regenwasser-Sammelsystem",
+    "costAnalysis": "Kostenanalyse",
+    "roiAnalysis": "ROI-Analyse",
+    "systemSpecs": "Systemspezifikationen",
+    "estimatedCost": "Geschätzte Kosten",
+    "annualSavings": "Jährliche Einsparungen",
+    "paybackPeriod": "Amortisationszeit",
+    "downloadReport": "Bericht Herunterladen"
+  }
+}

@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+// import { useState } from "react";
+=======
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
 import { resolveGoogleMapsApiKey } from "../../../lib/utils";
 import { Button } from "./button";
@@ -8,6 +11,10 @@ interface MapAreaCalculatorProps {
 }
 
 export function MapAreaCalculator({ onAreaCalculated }: MapAreaCalculatorProps) {
+<<<<<<< HEAD
+  // const [area] = useState(0);
+  
+=======
   const apiKey = resolveGoogleMapsApiKey() || "";
   return (
     <Card>
